@@ -1,43 +1,44 @@
-﻿using SMK.Domain.Interfaces;
+﻿using Microsoft.Extensions.Configuration;
+using SMK.Domain.Interfaces;
 using SMK.Domain.Models;
-using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Net.Http.Json;
-using System.Threading;
 
 namespace SMK.Domain.Implementations
 {
     public class FuctDomainService : IFuctDomainService
     {
         private readonly HttpClient _httpClient;
+        private readonly IConfiguration _configuration;
 
-        public FuctDomainService()
+        public FuctDomainService(IConfiguration configuration)
         {
+            //TODO Injecao de dependencia
+            _configuration = configuration;
             _httpClient = new HttpClient();
         }
 
         public async Task<Minerios> ObterMinerais(Data data)
         {
-            await ProcessRepositoriesAsync();
+            //TODO Finalizar Request
+            await RequestMinerais();
             throw new NotImplementedException();
         }
 
-        private async Task<dynamic> ProcessRepositoriesAsync()
+        private async Task<dynamic> RequestMinerais()
         {
-            
             try
             {
-                dynamic x = await _httpClient.GetFromJsonAsync<object>("https://fuct-smk186-code-challenge.cblx.com.br/minerais?mes=3&ano=3000&semana=3");
+                //TODO Finalizar obtencao de dados
+                var UriAPI = _configuration.GetValue<string>("UriFUCT");
+                //dynamic dados = await _httpClient.GetFromJsonAsync<object>();
 
-                return x;
+                //return dados;
+                throw new NotImplementedException();
             }
             catch(Exception e)
             {
                 throw new Exception("Erro não definido");
             }
-
-
         }
     }
 }
