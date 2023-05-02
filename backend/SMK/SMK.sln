@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{06E67C42-0605-42A8-9685-8D3C93096CE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{601C0712-DD2F-4772-A569-D6211FD0809A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{981108C9-ADC7-4FD6-A8D0-2904FC8A55EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{030443B4-56CB-4CCD-9470-ADF1AAFF9B6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMK", "Presentation\SMK\SMK.csproj", "{85E4319B-A89B-49FA-8960-5421E7FB46ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{A19F5272-3122-403B-B445-FBB6E8DD5066}"
+	ProjectSection(SolutionItems) = preProject
+		Config\appsettings.Development.json = Config\appsettings.Development.json
+		Config\appsettings.json = Config\appsettings.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{A7719888-8F76-4542-A0F2-26F87C1B04A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMK.Domain", "Domain\SMK.Domain\SMK.Domain.csproj", "{233BE74E-74D4-4B12-8B2F-52074CB92B24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoMapper", "AutoMapper", "{F17DF701-56B4-4FD9-B58C-22B7863ABABC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMK.CrossCutting.AutoMapper", "CrossCutting\AutoMapper\SMK.CrossCutting.AutoMapper\SMK.CrossCutting.AutoMapper.csproj", "{E040BA2C-C6C3-4DE2-AB7D-E9450F8504A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F2B72DC8-416D-466C-A68B-4B7C4EF8AFCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMK.Application.ViewModels", "Application\ViewModels\SMK.Application.ViewModels\SMK.Application.ViewModels.csproj", "{AA7A4089-B619-426D-B524-72A6A0802C5C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ViewModels", "ViewModels", "{AFC864A7-9679-4BED-B476-03802C93D758}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85E4319B-A89B-49FA-8960-5421E7FB46ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85E4319B-A89B-49FA-8960-5421E7FB46ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85E4319B-A89B-49FA-8960-5421E7FB46ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85E4319B-A89B-49FA-8960-5421E7FB46ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233BE74E-74D4-4B12-8B2F-52074CB92B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233BE74E-74D4-4B12-8B2F-52074CB92B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233BE74E-74D4-4B12-8B2F-52074CB92B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233BE74E-74D4-4B12-8B2F-52074CB92B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E040BA2C-C6C3-4DE2-AB7D-E9450F8504A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E040BA2C-C6C3-4DE2-AB7D-E9450F8504A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E040BA2C-C6C3-4DE2-AB7D-E9450F8504A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E040BA2C-C6C3-4DE2-AB7D-E9450F8504A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA7A4089-B619-426D-B524-72A6A0802C5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA7A4089-B619-426D-B524-72A6A0802C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA7A4089-B619-426D-B524-72A6A0802C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA7A4089-B619-426D-B524-72A6A0802C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85E4319B-A89B-49FA-8960-5421E7FB46ED} = {030443B4-56CB-4CCD-9470-ADF1AAFF9B6A}
+		{233BE74E-74D4-4B12-8B2F-52074CB92B24} = {601C0712-DD2F-4772-A569-D6211FD0809A}
+		{F17DF701-56B4-4FD9-B58C-22B7863ABABC} = {06E67C42-0605-42A8-9685-8D3C93096CE2}
+		{E040BA2C-C6C3-4DE2-AB7D-E9450F8504A9} = {F17DF701-56B4-4FD9-B58C-22B7863ABABC}
+		{AA7A4089-B619-426D-B524-72A6A0802C5C} = {AFC864A7-9679-4BED-B476-03802C93D758}
+		{AFC864A7-9679-4BED-B476-03802C93D758} = {F2B72DC8-416D-466C-A68B-4B7C4EF8AFCE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82F1DF7A-0ACC-46E3-8693-E55805C6FE6C}
+	EndGlobalSection
+EndGlobal
