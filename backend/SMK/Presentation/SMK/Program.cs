@@ -24,10 +24,12 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
                        reloadOnChange: true);
 });
 
+builder.Services.AddHttpClient();
+
 //Registra o AutoMapper
 builder.Services.AddSingleton(mapper);
 
-//Injeção de Depedência
+//Injecao de Depedencia
 builder.Services.AddScoped<IFuctDomainService, FuctDomainService>();
 
 var app = builder.Build();

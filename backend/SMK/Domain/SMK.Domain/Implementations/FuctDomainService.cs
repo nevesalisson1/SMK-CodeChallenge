@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using SMK.Domain.HttpFactory;
 using SMK.Domain.Interfaces;
 using SMK.Domain.Models;
 using System.Net.Http.Json;
@@ -7,33 +8,34 @@ namespace SMK.Domain.Implementations
 {
     public class FuctDomainService : IFuctDomainService
     {
-        private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public FuctDomainService(IConfiguration configuration)
+        public FuctDomainService(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
-            //TODO Injecao de dependencia
             _configuration = configuration;
-            _httpClient = new HttpClient();
+            _httpClientFactory = httpClientFactory;
         }
 
         public async Task<Minerios> ObterMinerais(Data data)
         {
-            //TODO Finalizar Request
-            await RequestMinerais();
-            throw new NotImplementedException();
+            var minerais = await RequestMinerais(data);
+            return minerais;
         }
 
-        private async Task<dynamic> RequestMinerais()
+        private async Task<Minerios> RequestMinerais(Data data)
         {
             try
             {
-                //TODO Finalizar obtencao de dados
-                var UriAPI = _configuration.GetValue<string>("UriFUCT");
-                //dynamic dados = await _httpClient.GetFromJsonAsync<object>();
+                var urlApiRequest = _configuration.GetValue<string>("UrlApiFUCT");
+                var path = ApiUrlConstants.UrlGetMinerais(urlApiRequest, data);
 
-                //return dados;
-                throw new NotImplementedException();
+                var httpClient = _httpClientFactory.CreateClient();
+                var request = new HttpRequestMessage(HttpMethod.Get, path);
+                var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+                var responseContent = await response.Content.ReadFromJsonAsync<Minerios>();
+
+                return responseContent;
             }
             catch(Exception e)
             {

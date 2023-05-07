@@ -8,9 +8,9 @@ namespace SMK.Domain.Models
 {
     public class Minerios
     {
-        double a { get; set; }
-        double b { get; set; }
-        double c { get; set; }
-        double d { get; set; }
+        public double? a { get; set; }
+        public double? b { get; set; }
+        public double? c { get; set; }
+        public double? d { get; set; }
     }
 }
