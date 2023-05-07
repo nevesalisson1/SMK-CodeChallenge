@@ -16,4 +16,11 @@
     <ProjectReference Include="..\..\Domain\SMK.Domain\SMK.Domain.csproj" />
   </ItemGroup>
 
+	<Target Name="PreBuild" AfterTargets="PreBuildEvent">
+		<ItemGroup>
+			<ConfigItems Include="$(ProjectDir)\..\..\Config\*.*" />
+		</ItemGroup>
+		<Copy SourceFiles="@(ConfigItems)" DestinationFolder="Config" />
+	</Target>
+
 </Project>

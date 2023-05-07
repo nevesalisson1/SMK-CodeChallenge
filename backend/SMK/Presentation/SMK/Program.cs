@@ -11,6 +11,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Altera a localizacao padrao dos arquivos appsettings
+var configDiretorio = Directory.GetCurrentDirectory() + "\\Config\\";
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    config.AddJsonFile(configDiretorio + "appsettings.json",
+                       optional: false,
+                       reloadOnChange: true);
+
+    config.AddJsonFile(configDiretorio + "appsettings.Development.json",
+                       optional: false,
+                       reloadOnChange: true);
+});
+
 //Registra o AutoMapper
 builder.Services.AddSingleton(mapper);
 

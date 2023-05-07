@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{A19F52
 	ProjectSection(SolutionItems) = preProject
 		Config\appsettings.Development.json = Config\appsettings.Development.json
 		Config\appsettings.json = Config\appsettings.json
+		Leia-me.txt = Leia-me.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{A7719888-8F76-4542-A0F2-26F87C1B04A7}"

@@ -1,0 +1,4 @@
+Aqui ficam as configurações gerais do appsettings.json que é copiado para a pasta do projeto/Config.
+
+Isso é feito para facilitar a configuração e caso precise de outros projetos com as mesmas configurações só será preciso alterar
+nessa localização. Lembrando de colocar no gitgnore os configs dos projetos, deixando só os arquivos aqui colocados.
