@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using SMK.Application.ViewModels;
+using SMK.Domain.Models;
 
 namespace SMK.CrossCutting.AutoMapper
 {
@@ -6,7 +8,7 @@ namespace SMK.CrossCutting.AutoMapper
     {
         public DomainToViewModelMappingProfile()
         {
-            
+            CreateMap<Minerios, MineriosViewModel>();
         }
     }
 }

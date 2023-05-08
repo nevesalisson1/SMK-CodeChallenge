@@ -22,8 +22,9 @@ namespace SMK.Controllers
         [HttpGet("ObterQuantidadeDeMinerio")]
         public async Task<IActionResult> ObterQuantidadeDeMinerio([FromQuery] DataViewModel data)
         {
-            var x = await _fuctDomainService.ObterMinerais(_mapper.Map<Data>(data));
-            return Ok(x);
+            var minerios = await _fuctDomainService.ObterMinerais(_mapper.Map<Data>(data));
+
+            return Ok(_mapper.Map<MineriosViewModel>(minerios));
         }
     }
 }
