@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace SMK.Application.ViewModels
 {
-    public class RetornoCargueiroViewModel
+    public class RetornoCargueiro
     {
         [Required]
         public string TipoCargueiro { get; set; }
         [Required]
         public DateTime RetornoDateTime { get; set; }
         [Required]
-        public MineriosViewModel Minerios { get; set; }
+        public Minerios Minerios { get; set; }
     }
 }

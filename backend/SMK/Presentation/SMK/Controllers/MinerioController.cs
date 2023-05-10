@@ -1,7 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SMK.Application.ViewModels;
-using SMK.Domain.Interfaces;
+using SMK.Domain.Interfaces.BusinessLogic;
 using SMK.Domain.Models;
 
 namespace SMK.Controllers

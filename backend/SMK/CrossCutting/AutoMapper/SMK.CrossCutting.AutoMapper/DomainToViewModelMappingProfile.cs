@@ -9,6 +9,8 @@ namespace SMK.CrossCutting.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Minerios, MineriosViewModel>();
+            CreateMap<RetornoCargueiro, RegistrarCargueiroViewModel>();
+            CreateMap<SaidaCargueiro, RegistrarCargueiroViewModel>();
         }
     }
 }

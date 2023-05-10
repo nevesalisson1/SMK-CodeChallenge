@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using SMK.Domain.HttpFactory;
-using SMK.Domain.Interfaces;
+using SMK.Domain.Interfaces.BusinessLogic;
 using SMK.Domain.Models;
 using System.Net.Http.Json;
 

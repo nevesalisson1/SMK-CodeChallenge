@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using SMK.Application.ViewModels;
-using SMK.Domain.Interfaces;
+using SMK.Domain.Interfaces.BusinessLogic;
 using SMK.Domain.Models;
 
 namespace SMK.Controllers
@@ -20,16 +20,16 @@ namespace SMK.Controllers
         }
 
         [HttpPost("RegistrarSaidaCargueiro")]
-        public async Task<IActionResult> RegistrarSaidaCargueiro([FromBody] SaidaCargueiroViewModel saidaCargueiro)
+        public async Task<IActionResult> RegistrarSaidaCargueiro([FromBody] RegistrarCargueiroViewModel saidaCargueiro)
         {
-            _cargueiroDomainService.RegistrarSaida();
+            await _cargueiroDomainService.RegistrarSaida(_mapper.Map<SaidaCargueiro>(saidaCargueiro));
             return Ok();
         }
 
         [HttpPost("RegistrarRetornoCargueiro")]
-        public async Task<IActionResult> RegistrarRetornoCargueiro([FromBody] RetornoCargueiroViewModel retornoCargueiro)
+        public async Task<IActionResult> RegistrarRetornoCargueiro([FromBody] RegistrarCargueiroViewModel retornoCargueiro)
         {
-            _cargueiroDomainService.RegistrarRetorno();
+            await _cargueiroDomainService.RegistrarRetorno(_mapper.Map<RetornoCargueiro>(retornoCargueiro));
             return Ok();
         }
 

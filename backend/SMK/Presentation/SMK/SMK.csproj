@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
@@ -14,6 +20,7 @@
     <ProjectReference Include="..\..\Application\ViewModels\SMK.Application.ViewModels\SMK.Application.ViewModels.csproj" />
     <ProjectReference Include="..\..\CrossCutting\AutoMapper\SMK.CrossCutting.AutoMapper\SMK.CrossCutting.AutoMapper.csproj" />
     <ProjectReference Include="..\..\Domain\SMK.Domain\SMK.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\SMK.Infrastructure\SMK.Infrastructure.csproj" />
   </ItemGroup>
 
 	<Target Name="PreBuild" AfterTargets="PreBuildEvent">

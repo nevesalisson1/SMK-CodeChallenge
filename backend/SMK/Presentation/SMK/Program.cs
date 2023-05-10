@@ -1,7 +1,9 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using SMK.CrossCutting.AutoMapper;
 using SMK.Domain.Implementations;
-using SMK.Domain.Interfaces;
+using SMK.Domain.Interfaces.BusinessLogic;
+using SMK.Infrastructure.Context;
 
 IMapper mapper = AutoMapperConfiguration.RegisterMappings().CreateMapper();
 
@@ -25,6 +27,11 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 });
 
 builder.Services.AddHttpClient();
+
+//RegistraSQLite
+//builder.Services.AddDbContext<CargueiroContext>(options =>
+//    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+//);
 
 //Registra o AutoMapper
 builder.Services.AddSingleton(mapper);

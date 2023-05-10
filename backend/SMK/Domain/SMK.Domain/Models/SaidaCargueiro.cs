@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SMK.Application.ViewModels
 {
-    public class SaidaCargueiroViewModel
+    public class SaidaCargueiro
     {
         [Required]
         public string TipoCargueiro { get; set; }
