@@ -8,11 +8,6 @@ namespace SMK.Infrastructure.Context
     {
         protected readonly IConfiguration Configuration;
 
-        public CargueiroContext()
-        {
-
-        }
-
         public CargueiroContext(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,7 +19,13 @@ namespace SMK.Infrastructure.Context
             options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<MinerioCargueiro>().HasKey(sc => new { sc.MinerioId, sc.CargueiroId });
+        }
+
         public DbSet<Cargueiro> Cargueiros { get; set; }
+        public DbSet<Minerio> Minerios { get; set; }
 
     }
 }

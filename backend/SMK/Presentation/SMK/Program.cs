@@ -1,9 +1,7 @@
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 using SMK.CrossCutting.AutoMapper;
 using SMK.Domain.Implementations;
 using SMK.Domain.Interfaces.BusinessLogic;
-using SMK.Infrastructure.Context;
 
 IMapper mapper = AutoMapperConfiguration.RegisterMappings().CreateMapper();
 
@@ -38,6 +36,7 @@ builder.Services.AddSingleton(mapper);
 
 //Injecao de Depedencia
 builder.Services.AddScoped<IFuctDomainService, FuctDomainService>();
+builder.Services.AddScoped<ICargueiroDomainService, CargueiroDomainService>();
 
 var app = builder.Build();
 
